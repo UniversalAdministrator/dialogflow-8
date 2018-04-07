@@ -15,7 +15,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   console.log ('message from webhook');
-  console.log (req.body.result);
+  console.log (req.body);
   var speech =
     req.body.result &&
     req.body.result.parameters &&
