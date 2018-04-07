@@ -16,12 +16,12 @@ restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
   console.log ('message from webhook1');
   console.log (req.body.queryResult.parameters.echoText);
-  var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText
-      : "Seems like some problem. Speak again.";
+  var speech =req.body.queryResult.parameters.echoText;
+    // req.body.result &&
+    // req.body.result.parameters &&
+    // req.body.result.parameters.echoText
+    //   ? req.body.result.parameters.echoText
+    //   : "Seems like some problem. Speak again.";
   return res.json({
     speech: speech,
     displayText: speech,
