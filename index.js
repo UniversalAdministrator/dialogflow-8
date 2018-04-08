@@ -27,7 +27,7 @@ restService.post("/echo", function(req, res) {
     //   : "Seems like some problem. Speak again.";
   return res.json(
     {
-      "fulfillmentText": "fulfillmentText",
+      "fulfillmentText": 'RES: '+text,
       "source": "example.com",
       "payload": {
         "google": {
