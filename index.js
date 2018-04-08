@@ -20,7 +20,7 @@ restService.post("/echo", function(req, res) {
   var text =  req.body.queryResult.parameters.echoText;
 
   console.log (text);
-  var apConfirmation = 'We have booked your appointment on' + text
+  var apConfirmation = 'We have booked your appointment on ' + text
     // req.body.result &&
     // req.body.result.parameters &&
     // req.body.result.parameters.echoText
