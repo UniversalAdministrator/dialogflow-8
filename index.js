@@ -20,7 +20,7 @@ restService.post("/echo", function(req, res) {
 
   var date =  req.body.queryResult.parameters.echoText;
 	
-  var apConfirmation = 'We have booked your appointment on ' + moment (date).format ( 'Do MMM YYYY');
+  var apConfirmation = 'We have booked your appointment on ' + moment (date).format ( 'dddd, Do MMMM, YYYY');
     // req.body.result &&
     // req.body.result.parameters &&
     // req.body.result.parameters.echoText
