@@ -20,7 +20,7 @@ restService.post("/echo", function(req, res) {
 
   var date =  req.body.queryResult.parameters.echoText;
 	
-  var apConfirmation = 'We have booked your appointment on ' + moment (date, 'Do MMM YYYY');
+  var apConfirmation = 'We have booked your appointment on ' + moment (date).format ( 'Do MMM YYYY');
     // req.body.result &&
     // req.body.result.parameters &&
     // req.body.result.parameters.echoText
@@ -74,5 +74,5 @@ restService.post("/echo", function(req, res) {
 
 
 restService.listen(process.env.PORT || 8000, function() {
-  console.log("Server up and listening", process.env.PORT);
+  console.log("Server up and listening ", process.env.PORT);
 });
