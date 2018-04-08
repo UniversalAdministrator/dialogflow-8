@@ -20,6 +20,7 @@ restService.post("/echo", function(req, res) {
   var text =  req.body.queryResult.parameters.echoText;
 
   console.log (text);
+  var apConfirmation = 'We have booked your appointment on' + text
     // req.body.result &&
     // req.body.result.parameters &&
     // req.body.result.parameters.echoText
@@ -28,7 +29,7 @@ restService.post("/echo", function(req, res) {
     // response, context
   return res.json(
     {
-      "fulfillmentText": 'RES: '+text,
+      "fulfillmentText": apConfirmation,
       "source": "example.com",
       "payload": {
         "google": {
@@ -37,17 +38,17 @@ restService.post("/echo", function(req, res) {
             "items": [
               {
                 "simpleResponse": {
-                  "textToSpeech": "this is a simple response"
+                  "textToSpeech": apConfirmation
                 }
               }
             ]
           }
         },
         "facebook": {
-          "text": "Hello, Facebook!"
+          "text": apConfirmation
         },
         "slack": {
-          "text": "This is a text response for Slack."
+          "text": apConfirmation
         },
         
   "outputContexts": [
