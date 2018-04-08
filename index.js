@@ -19,8 +19,7 @@ restService.post("/echo", function(req, res) {
   console.log ('message from webhook1');
 
   var date =  req.body.queryResult.parameters.echoText;
-
-  console.log (text);
+	
   var apConfirmation = 'We have booked your appointment on ' + moment (date, 'Do MMM YYYY');
     // req.body.result &&
     // req.body.result.parameters &&
