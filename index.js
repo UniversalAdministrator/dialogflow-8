@@ -25,6 +25,7 @@ restService.post("/echo", function(req, res) {
     // req.body.result.parameters.echoText
     //   ? req.body.result.parameters.echoText
     //   : "Seems like some problem. Speak again.";
+    // response, context
   return res.json(
     {
       "fulfillmentText": 'RES: '+text,
@@ -47,7 +48,24 @@ restService.post("/echo", function(req, res) {
         },
         "slack": {
           "text": "This is a text response for Slack."
-        }
+        },
+        
+  "outputContexts": [
+    {
+      "name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
+      "lifespanCount": 5,
+      "parameters": {
+        "param": "param value"
+      }
+    }
+  ],
+  "followupEventInput": {
+    "name": "event name",
+    "languageCode": "en-US",
+    "parameters": {
+      "param": "param value"
+    }
+  }
       }    
     }
   );
